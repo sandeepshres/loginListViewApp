@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ItemsproviderService {
+
   private _url = 'assets/data/items.json';
+
   constructor(private http: HttpClient) { }
 
   getItems(): Observable<Iitems[]> {

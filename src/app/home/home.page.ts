@@ -6,8 +6,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
+
   public loginForm: FormGroup;
+
   constructor(public formBuilder: FormBuilder) {
     this.loginForm = formBuilder.group({
       userName: ['', Validators.compose([Validators.minLength(4), Validators.required])],
@@ -15,6 +18,4 @@ export class HomePage {
       Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$'), Validators.required])]
     });
   }
-
-
 }

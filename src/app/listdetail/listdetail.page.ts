@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IonItemSliding, ToastController } from '@ionic/angular';
 import { ItemsproviderService } from '../itemsprovider.service';
 
 @Component({
@@ -7,9 +6,12 @@ import { ItemsproviderService } from '../itemsprovider.service';
   templateUrl: './listdetail.page.html',
   styleUrls: ['./listdetail.page.scss'],
 })
+
 export class ListdetailPage implements OnInit {
   public items: any[];
-  constructor(private alertCtrl: ToastController, private itemService: ItemsproviderService) { }
+
+  constructor(private itemService: ItemsproviderService) { }
+
   ngOnInit() {
     this.itemService.getItems()
       .subscribe(data => this.items = data);
