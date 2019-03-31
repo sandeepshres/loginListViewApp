@@ -7,6 +7,26 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-lg="4" size-md="5" size-sm="6" size-xs="12">
+        <form [formGroup]="loginForm">
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input formControlName="userName" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
+          </ion-item>
+          <ion-button class="topMargin" expand="block" color="primary" routerLink="/listdetail"
+            routerDirection="forward" [disabled]="!loginForm.controls.password.valid">Login</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--   
   <div class="ion-padding">
     <form [formGroup]="loginForm">
       <ion-item>
@@ -17,8 +37,8 @@
         <ion-label position="floating">Password</ion-label>
         <ion-input formControlName="password" type="password"></ion-input>
       </ion-item>
-      <ion-button expand="block" color="primary" routerLink="/listdetail" routerDirection="forward"
+      <ion-button class="topMargin" expand="block" color="primary" routerLink="/listdetail" routerDirection="forward"
         [disabled]="!loginForm.controls.password.valid">Login</ion-button>
     </form>
-  </div>
+  </div> -->
 </ion-content>

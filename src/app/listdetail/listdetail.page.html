@@ -14,21 +14,25 @@
 </ion-header>
 
 <ion-content>
-  <div>
-    <ion-list>
-      <ion-item-sliding *ngFor="let item of items">
-        <ion-item>
-          <div class="icon">
-            <img src="/assets/icon/diamond.png" />
-          </div>
-          <h4>{{ item.name }}</h4>
-        </ion-item>
-        <ion-item-options side="end">
-          <ion-item-option color="danger" (click)="deleteItem(item.id)">
-            <ion-icon slot="icon-only" name="trash"></ion-icon>
-          </ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-list>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center size-md="4" size-lg="3" size-sm="6" size-xs="12" *ngFor="let item of items">
+        <ion-list>
+          <ion-item-sliding>
+            <ion-item>
+              <div class="icon">
+                <img src="/assets/icon/diamond.png" />
+              </div>
+              <h4>{{ item.name }}</h4>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="deleteItem(item.id)">
+                <ion-icon slot="icon-only" name="trash"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
